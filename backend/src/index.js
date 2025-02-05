@@ -1,11 +1,28 @@
-import express from "express"
+// import express from "express"
 
-import authRoutes from "./routes/auth.routes.js"
+// import dotenv from "dotenv"
 
-const app = express()
+// import authRoutes from "./routes/auth.routes.js"
 
-app.use("/api/auth",authRoutes)
+// const app = express()
+// const port  = process.env.PORT
 
-app.listen(5000,()=>{
- console.log("my server is running at 5000")
-})
+// app.use("/api/auth",authRoutes)
+
+// app.listen(PORT,()=>{
+//  console.log("my server is running on Port :" + PORT)
+// })
+import express from "express";
+import dotenv from "dotenv";
+import authRoutes from "./routes/auth.routes.js";
+
+dotenv.config(); // Initialize dotenv to load environment variables
+
+const app = express();
+const port = process.env.PORT || 3000; // Fallback to port 3000 if not defined in .env
+
+app.use("/api/auth", authRoutes);
+
+app.listen(port, () => {
+  console.log("My server is running on port: " + port);
+});

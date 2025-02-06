@@ -22,7 +22,7 @@ const app = express();
 const port = process.env.PORT  // Fallback to port 3000 if not defined in .env
 
 app.use("/api/auth", authRoutes);
-
+//
 app.listen(port, () => {
   console.log("My server is running on port: " + port);
 });

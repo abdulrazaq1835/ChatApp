@@ -19,7 +19,7 @@ import authRoutes from "./routes/auth.routes.js";
 dotenv.config(); // Initialize dotenv to load environment variables
 
 const app = express();
-const port = process.env.PORT || 3000; // Fallback to port 3000 if not defined in .env
+const port = process.env.PORT  // Fallback to port 3000 if not defined in .env
 
 app.use("/api/auth", authRoutes);
 
